@@ -58,22 +58,35 @@
                     </view>
                     <connections>
                         <outlet property="videoPreview" destination="mis-F3-f11" id="L4B-c1-EhK"/>
+                        <segue destination="wjf-mf-kH3" kind="show" identifier="openQR" id="3TO-Vo-hxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w94-kM-oAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424.8" y="22.906403940886701"/>
         </scene>
-        <!--View Controller-->
+        <!--Building View Controller-->
         <scene sceneID="ffU-rE-1Gy">
             <objects>
-                <viewController storyboardIdentifier="openQR" id="wjf-mf-kH3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="openQR" id="wjf-mf-kH3" customClass="BuildingViewController" customModule="queensqr_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZnZ-Ox-H0X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ED-b9-Md5">
+                                <rect key="frame" x="147" y="264" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IUK-ex-4eY"/>
                     </view>
+                    <connections>
+                        <outlet property="testLabel" destination="5ED-b9-Md5" id="DVv-mR-aWA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3H-WI-Gyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
