@@ -86,8 +86,10 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                print(metadataObj.stringValue)
+                //print(metadataObj.stringValue)
+                qrText = metadataObj.stringValue!
                 // perform segue
+                performSegue(withIdentifier: "openQR", sender: nil)
                 //messageLabel.text = metadataObj.stringValue
             }
         }

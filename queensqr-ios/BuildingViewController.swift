@@ -17,6 +17,7 @@ class BuildingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(qrData)
         testLabel.text = qrData
         // Do any additional setup after loading the view.
     }
