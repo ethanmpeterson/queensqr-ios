@@ -31,9 +31,9 @@ class BuildingViewController: UITableViewController {
         super.viewDidLoad()
         
         tableViewData = [
+            cellData(opened: false, title: "General Information", sectionData: ["1", "2", "3"]),
             cellData(opened: false, title: "Alias", sectionData: ["1", "2", "3"]),
-            cellData(opened: false, title: "faculty", sectionData: ["1", "2", "3"]),
-            cellData(opened: false, title: "Description", sectionData: ["1", "2", "3"])
+            cellData(opened: false, title: "Services", sectionData: ["1", "2", "3"]),
         ]
         
         print(qrData)
@@ -65,6 +65,13 @@ class BuildingViewController: UITableViewController {
             if let d = response.result.value {
                 self.building = d as? [String : Any]
                 self.navigationItem.title = (self.building?["name"] as! String)
+                self.tableViewData[0].sectionData = [
+                    self.building!["address"] as! String,
+                    self.building!["faculty"] as! String,
+                    self.building!["history"] as! String,
+                ]
+                self.tableViewData[1].sectionData = self.building!["alias"] as! [String]
+                
             }
         }
     }
