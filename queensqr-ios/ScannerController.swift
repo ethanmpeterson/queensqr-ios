@@ -147,8 +147,8 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.destination is BuildingViewController {
-            let dest = segue.destination as! BuildingViewController
+        if segue.destination is SingleBuildingViewController {
+            let dest = segue.destination as! SingleBuildingViewController
             dest.qrData = qrText
         }
     }

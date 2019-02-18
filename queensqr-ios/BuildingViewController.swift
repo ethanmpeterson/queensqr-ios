@@ -33,7 +33,7 @@ class BuildingViewController: UITableViewController {
         tableViewData = [
             cellData(opened: false, title: "General Information", sectionData: ["1", "2", "3"]),
             cellData(opened: false, title: "Alias", sectionData: ["1", "2", "3"]),
-            cellData(opened: false, title: "Services", sectionData: ["1", "2", "3"]),
+            cellData(opened: false, title: "Services", sectionData: [""]),
         ]
         
         print(qrData)
@@ -71,6 +71,7 @@ class BuildingViewController: UITableViewController {
                     self.building!["history"] as! String,
                 ]
                 self.tableViewData[1].sectionData = self.building!["alias"] as! [String]
+                self.tableViewData[2].sectionData = [""]
                 
             }
         }
@@ -89,20 +90,23 @@ class BuildingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var dataIndex = indexPath.row - 1
+        let dataIndex = indexPath.row - 1
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
                 return UITableViewCell()
             }
             cell.textLabel?.text = tableViewData[indexPath.section].title
-            
+            cell.textLabel?.textAlignment = NSTextAlignment.center
+            cell.textLabel?.adjustsFontSizeToFitWidth = true
+            cell.textLabel?.font.withSize(24.0)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
                 return UITableViewCell()
             }
             cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
-            cell.layoutMargins.left = 30
+            cell.textLabel?.textAlignment = NSTextAlignment.left
+            //cell.layoutMargins.left = 30
             return cell
         }
     }

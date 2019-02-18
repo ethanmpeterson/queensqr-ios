@@ -22,6 +22,9 @@
 		73238D482219E5690026445D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73238D462219E5690026445D /* LaunchScreen.storyboard */; };
 		73238D532219E5690026445D /* queensqr_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73238D522219E5690026445D /* queensqr_iosTests.swift */; };
 		73238D5E2219E5690026445D /* queensqr_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73238D5D2219E5690026445D /* queensqr_iosUITests.swift */; };
+		735107B9221B3BA6008DC46B /* SingleBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735107B8221B3BA6008DC46B /* SingleBuildingViewController.swift */; };
+		735107BA221B3BA6008DC46B /* SingleBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735107B8221B3BA6008DC46B /* SingleBuildingViewController.swift */; };
+		735107BB221B3BA6008DC46B /* SingleBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735107B8221B3BA6008DC46B /* SingleBuildingViewController.swift */; };
 		77EF53C9AF6BB9566AAA0AFD /* Pods_queensqr_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2025B49AE0D543E7ADA7F5D /* Pods_queensqr_iosUITests.framework */; };
 		86899AB868FEB996BB61C448 /* Pods_queensqr_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE806A1E6F2A5EE3E3E6216 /* Pods_queensqr_ios.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,7 @@
 		73238D592219E5690026445D /* queensqr-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "queensqr-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73238D5D2219E5690026445D /* queensqr_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queensqr_iosUITests.swift; sourceTree = "<group>"; };
 		73238D5F2219E5690026445D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		735107B8221B3BA6008DC46B /* SingleBuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleBuildingViewController.swift; sourceTree = "<group>"; };
 		A2025B49AE0D543E7ADA7F5D /* Pods_queensqr_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_queensqr_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE806A1E6F2A5EE3E3E6216 /* Pods_queensqr_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_queensqr_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEE55029E4F8F9692FEB6D /* Pods-queensqr-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-queensqr-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-queensqr-iosTests/Pods-queensqr-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				73238D412219E5680026445D /* queensqr_ios.xcdatamodeld */,
 				7322B5E7221A081C004F0AF9 /* ScannerController.swift */,
 				7322B5EB221A1973004F0AF9 /* BuildingViewController.swift */,
+				735107B8221B3BA6008DC46B /* SingleBuildingViewController.swift */,
 			);
 			path = "queensqr-ios";
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				7322B5EC221A1973004F0AF9 /* BuildingViewController.swift in Sources */,
 				73238D432219E5680026445D /* queensqr_ios.xcdatamodeld in Sources */,
 				73238D3D2219E5680026445D /* ViewController.swift in Sources */,
+				735107B9221B3BA6008DC46B /* SingleBuildingViewController.swift in Sources */,
 				73238D3B2219E5680026445D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735107BA221B3BA6008DC46B /* SingleBuildingViewController.swift in Sources */,
 				7322B5ED221A1973004F0AF9 /* BuildingViewController.swift in Sources */,
 				7322B5E9221A081C004F0AF9 /* ScannerController.swift in Sources */,
 				73238D532219E5690026445D /* queensqr_iosTests.swift in Sources */,
@@ -426,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735107BB221B3BA6008DC46B /* SingleBuildingViewController.swift in Sources */,
 				7322B5EE221A1973004F0AF9 /* BuildingViewController.swift in Sources */,
 				7322B5EA221A081C004F0AF9 /* ScannerController.swift in Sources */,
 				73238D5E2219E5690026445D /* queensqr_iosUITests.swift in Sources */,
