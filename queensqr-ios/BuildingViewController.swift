@@ -19,7 +19,7 @@ class BuildingViewController: UITableViewController {
     var apiRoot = ProcessInfo.processInfo.environment["API_ROOT"]
     
     var URL : String = ""
-    var buildings : [[String : Any]]!
+    var buildings : [[String : Any]]? = nil
     
     
     override func viewDidLoad() {
@@ -28,28 +28,19 @@ class BuildingViewController: UITableViewController {
         print(apiRoot!)
         // Do any additional setup after loading the view.
         
-        // convert QR Data to JSON
         
-        URL = "\(apiRoot!)/buildings/"
-        print(URL)
-        getBuildings(URL)
-    }
-
-    func getBuildings(_ url : String) {
-        AF.request(url, headers: [:]).responseJSON { response in
-            if let d = response.result.value {
-                self.buildings = d as! [[String : Any]]
-                print(d)
-            }
-        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if buildings != nil {
+            return buildings!.count
+        } else {
+            return 0
+        }
     }
     
     
