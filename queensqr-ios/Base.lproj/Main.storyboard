@@ -214,6 +214,9 @@
                                         <state key="normal" title="Services">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="servicePressed:" destination="NCh-4D-gDC" eventType="touchUpInside" id="Ujl-D3-71P"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0o9-C1-lJg">
                                         <rect key="frame" x="8" y="298" width="359" height="260"/>
@@ -284,6 +287,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eiM-jD-sfr"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="F42-Xz-iJW" id="8JZ-4P-cvk"/>
+                        <outlet property="aliasLabel" destination="xFx-mb-hqU" id="9Aa-08-WrD"/>
+                        <outlet property="facultyLabel" destination="FUt-SQ-aq0" id="7ZA-cJ-wDb"/>
+                        <outlet property="friday" destination="WT4-QZ-l3d" id="THj-4J-9NG"/>
+                        <outlet property="genInfo" destination="cqB-ZO-a3D" id="s2r-KU-yXQ"/>
+                        <outlet property="historyLabel" destination="QCv-8f-SkC" id="LZm-Qx-RuU"/>
+                        <outlet property="hoursView" destination="0o9-C1-lJg" id="TwN-sT-32J"/>
+                        <outlet property="monday" destination="aCB-er-tja" id="Poh-KY-yGG"/>
+                        <outlet property="saturday" destination="T2m-tU-sh2" id="Eeq-PQ-Hws"/>
+                        <outlet property="servicesButton" destination="v4a-xp-AyI" id="Wx4-kd-idI"/>
+                        <outlet property="sunday" destination="xfL-8j-8k2" id="BLv-WC-p6Z"/>
+                        <outlet property="thursday" destination="2Wp-vI-aLD" id="Cj8-TF-ep0"/>
+                        <outlet property="tuesday" destination="bJG-QU-Eja" id="BrO-0K-grr"/>
+                        <outlet property="wednesday" destination="Upd-PP-tqE" id="rKj-lW-tHE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atu-yz-lNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

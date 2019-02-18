@@ -10,6 +10,27 @@ import UIKit
 import Alamofire
 
 class SingleBuildingViewController: UIViewController {
+    // View and Button Outlets
+    @IBOutlet weak var servicesButton: UIButton!
+    @IBOutlet weak var genInfo: UIView!
+    @IBOutlet weak var hoursView: UIView!
+    
+    
+    // Label Outlets
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var facultyLabel: UILabel!
+    @IBOutlet weak var historyLabel: UILabel!
+    @IBOutlet weak var aliasLabel: UILabel!
+    
+    @IBOutlet weak var monday: UILabel!
+    @IBOutlet weak var tuesday: UILabel!
+    @IBOutlet weak var wednesday: UILabel!
+    @IBOutlet weak var thursday: UILabel!
+    @IBOutlet weak var friday: UILabel!
+    @IBOutlet weak var saturday: UILabel!
+    @IBOutlet weak var sunday: UILabel!
+    
+    
     
     var qrData : String = ""
     var apiRoot = ProcessInfo.processInfo.environment["API_ROOT"]
@@ -44,6 +65,9 @@ class SingleBuildingViewController: UIViewController {
         //print(URL)
         //getBuilding(URL)
         //print(building!)
+    }
+    
+    @IBAction func servicePressed(_ sender: Any) {
     }
     
     func getBuilding(_ url : String) {
