@@ -24,6 +24,12 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         case videoInitFailure
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if captureSession != nil {
+            captureSession.startRunning()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
