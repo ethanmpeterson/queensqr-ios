@@ -40,7 +40,9 @@ class SingleBuildingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        applyStyles()
+        
         // Do any additional setup after loading the view.
         print(qrData)
         print(apiRoot!)
@@ -78,6 +80,17 @@ class SingleBuildingViewController: UIViewController {
             }
         }
     }
+    
+    func applyStyles() {
+        servicesButton.layer.cornerRadius = 15
+        //R: 246 G: 192 B: 70
+        let color = UIColor(red: 246/255, green: 192/255, blue: 70/255, alpha: 1).cgColor
+        servicesButton.layer.borderColor = color
+        servicesButton.layer.borderWidth = 3
+        genInfo.layer.cornerRadius = 15
+        hoursView.layer.cornerRadius = 15
+    }
+    
     /*
     // MARK: - Navigation
 
