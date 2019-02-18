@@ -302,26 +302,58 @@
                         <outlet property="thursday" destination="2Wp-vI-aLD" id="Cj8-TF-ep0"/>
                         <outlet property="tuesday" destination="bJG-QU-Eja" id="BrO-0K-grr"/>
                         <outlet property="wednesday" destination="Upd-PP-tqE" id="rKj-lW-tHE"/>
+                        <segue destination="guv-OQ-dn4" kind="show" identifier="serviceList" id="TWE-2a-5BT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atu-yz-lNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3151.1999999999998" y="-99.01477832512316"/>
         </scene>
-        <!--Service-->
-        <scene sceneID="hYp-Rf-1cK">
+        <!--Services-->
+        <scene sceneID="h5j-kK-KVs">
             <objects>
-                <viewController title="Service" id="AnA-rd-xz8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Z9N-AT-QJ6">
+                <tableViewController title="Services" id="guv-OQ-dn4" customClass="ServiceListViewController" customModule="queensqr_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8qf-Y2-QBl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="G20-Je-m51"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="VES-8A-mKs">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VES-8A-mKs" id="3m3-1a-kpz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="guv-OQ-dn4" id="fNb-35-eo9"/>
+                            <outlet property="delegate" destination="guv-OQ-dn4" id="dhS-QM-hoH"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Gfd-gB-YM6" kind="show" identifier="serviceView" id="rck-Hv-UmJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pDV-kS-6dW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4007" y="-98"/>
+        </scene>
+        <!--Service Name-->
+        <scene sceneID="UIq-44-z3d">
+            <objects>
+                <viewController title="Service Name" id="Gfd-gB-YM6" customClass="ServiceViewController" customModule="queensqr_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hGi-JS-nlh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AiU-Ec-tsb"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xYO-vb-ULI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91B-9w-2Q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3922" y="-104"/>
+            <point key="canvasLocation" x="4776" y="-128"/>
         </scene>
     </scenes>
     <resources>

@@ -71,6 +71,7 @@ class SingleBuildingViewController: UIViewController {
     
     
     @IBAction func servicePressed(_ sender: Any) {
+        performSegue(withIdentifier: "serviceList", sender: self)
     }
     
     func getBuilding(_ url : String) {
@@ -134,6 +135,10 @@ class SingleBuildingViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.destination is ServiceListViewController {
+            let dest = segue.destination as! ServiceListViewController
+            dest.services = building!["services"] as! [[String : Any]]
+        }
         
     }
     
