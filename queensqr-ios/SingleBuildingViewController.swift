@@ -63,9 +63,9 @@ class SingleBuildingViewController: UIViewController {
             print(error)
         }
         
-        //URL = "\(apiRoot!)/buildings/\(jsObject["id"]!)"
-        //print(URL)
-        //getBuilding(URL)
+        URL = "\(apiRoot!)/buildings/\(jsObject["id"]!)"
+        print(URL)
+        getBuilding(URL)
         //print(building!)
     }
     
@@ -76,9 +76,24 @@ class SingleBuildingViewController: UIViewController {
         AF.request(url, headers: [:]).responseJSON { response in
             if let d = response.result.value {
                 self.building = d as? [String : Any]
-                self.navigationItem.title = (self.building?["name"] as! String)
+                //self.navigationItem.title = (self.building?["name"] as! String)
+                self.updateInfo(self.building!)
             }
         }
+    }
+    
+    func updateInfo(_ buildingDict : [String : Any]) {
+        self.navigationItem.title = (buildingDict["name"] as! String)
+        
+        // Update General Info Section
+        addressLabel.text = "Address: \(buildingDict["address"] as! String)"
+        facultyLabel.text = "Faculty: \(buildingDict["faculty"] as! String)"
+        historyLabel.text = "History: \(buildingDict["history"] as! String)"
+        aliasLabel.numberOfLines = 3
+        aliasLabel.text = "Alias: \(convertStrArr(buildingDict["alias"] as! [String]))"
+        
+        
+        // Update Hours
     }
     
     func applyStyles() {
@@ -91,14 +106,28 @@ class SingleBuildingViewController: UIViewController {
         hoursView.layer.cornerRadius = 15
     }
     
-    /*
+    func convertStrArr(_ arr : [String]) -> String {
+        var str = ""
+        for i in 0...arr.count - 1 {
+            print(i)
+            if (i != arr.count - 1) {
+                str.append(arr[i])
+                str.append(", ")
+            } else {
+                str.append(arr[i])
+            }
+        }
+        return str
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+    
 
 }
