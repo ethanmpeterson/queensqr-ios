@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var apiRoot = ProcessInfo.processInfo.environment["API_ROOT"]
     
     var URL : String = ""
-    var buildings : [[String : Any]]!
+    var buildings : [[String : Any]]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,27 @@ class ViewController: UIViewController {
         getBuildings(URL)
     }
 
+    @IBAction func browsePressed(_ sender: Any) {
+        if (buildings != nil) {
+            performSegue(withIdentifier: "buildingList", sender: self)
+        }
+    }
+    
     func getBuildings(_ url : String) {
         AF.request(url, headers: [:]).responseJSON { response in
             if let d = response.result.value {
                 self.buildings = d as! [[String : Any]]
                 print(self.buildings!)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // OBJ TRANSFER HERE
+        let b = buildings!
+        if segue.destination is BuildingViewController {
+            let dest = segue.destination as! BuildingViewController
+            dest.buildings = b
         }
     }
 }

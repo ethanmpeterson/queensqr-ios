@@ -19,13 +19,14 @@ class BuildingViewController: UITableViewController {
     var apiRoot = ProcessInfo.processInfo.environment["API_ROOT"]
     
     var URL : String = ""
-    var buildings : [[String : Any]]? = nil
+    var buildings : [[String : Any]]!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Building List"
         print(apiRoot!)
+        print(buildings!)
         // Do any additional setup after loading the view.
         
         
@@ -36,14 +37,24 @@ class BuildingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if buildings != nil {
-            return buildings!.count
-        } else {
-            return 0
-        }
+        return buildings!.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if indexPath.row == 0 {
+            let name = buildings[indexPath.row]["name"] as! String
+            cell?.textLabel!.text = name
+        }
+        return cell!
+    }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            rowSelected = indexPath.row
+            performSegue(withIdentifier: "bView", sender: self)
+        }
+    }
     
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let dataIndex = indexPath.row - 1
@@ -81,14 +92,18 @@ class BuildingViewController: UITableViewController {
 //        }
 //    }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.destination is SingleBuildingViewController {
+            let dest = segue.destination as! SingleBuildingViewController
+            dest.building = buildings![rowSelected]
+        }
     }
-    */
+    
 
 }

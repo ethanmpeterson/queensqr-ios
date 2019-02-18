@@ -48,24 +48,28 @@ class SingleBuildingViewController: UIViewController {
         print(apiRoot!)
         
         
-        // convert QR Data to JSON
-        let data = qrData.data(using: .utf8)!
-        var jsObject = [String : Any]()
-        do {
-            if let json = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [String : Any]
-            {
-                print(json) // use the json here
-                jsObject = json
-            } else {
-                print("bad json")
+        if building == nil {
+            // convert QR Data to JSON
+            let data = qrData.data(using: .utf8)!
+            var jsObject = [String : Any]()
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [String : Any]
+                {
+                    print(json) // use the json here
+                    jsObject = json
+                } else {
+                    print("bad json")
+                }
+            } catch let error as NSError {
+                print(error)
             }
-        } catch let error as NSError {
-            print(error)
+            
+            URL = "\(apiRoot!)/buildings/\(jsObject["id"]!)"
+            print(URL)
+            getBuilding(URL)
+        } else {
+            updateInfo(building!)
         }
-        
-        URL = "\(apiRoot!)/buildings/\(jsObject["id"]!)"
-        print(URL)
-        getBuilding(URL)
         //print(building!)
     }
     

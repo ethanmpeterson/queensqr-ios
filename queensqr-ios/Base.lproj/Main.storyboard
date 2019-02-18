@@ -46,7 +46,7 @@
                                     <color key="titleShadowColor" red="0.95923715829849243" green="0.75339037179946899" blue="0.2702585756778717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eDw-A2-9jP" kind="show" id="Njj-Es-20V"/>
+                                    <action selector="browsePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oqr-Ff-MxT"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xO6-in-Iwj">
@@ -86,6 +86,7 @@
                     <connections>
                         <outlet property="browse" destination="H47-G0-Kek" id="dr5-pv-qsa"/>
                         <outlet property="scan" destination="5wZ-W2-oKw" id="whq-Xq-8Lq"/>
+                        <segue destination="eDw-A2-9jP" kind="show" identifier="buildingList" id="VFU-0i-3UI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,6 +151,9 @@
                             <outlet property="delegate" destination="eDw-A2-9jP" id="uWN-nw-IxE"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="NCh-4D-gDC" kind="show" identifier="bView" id="73D-4p-0Y4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAW-Av-w21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atu-yz-lNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3151.1999999999998" y="-99.01477832512316"/>
+            <point key="canvasLocation" x="2428" y="-12"/>
         </scene>
         <!--Services-->
         <scene sceneID="h5j-kK-KVs">
@@ -341,7 +345,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDV-kS-6dW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4007" y="-98"/>
+            <point key="canvasLocation" x="3332" y="-13"/>
         </scene>
         <!--Service Name-->
         <scene sceneID="UIq-44-z3d">
@@ -467,4 +471,7 @@
     <resources>
         <image name="logo" width="2048" height="2048"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="73D-4p-0Y4"/>
+    </inferredMetricsTieBreakers>
 </document>
