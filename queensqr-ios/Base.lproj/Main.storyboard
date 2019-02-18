@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lY0-1y-hMt">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoD-Gn-LoI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1145" y="15"/>
+            <point key="canvasLocation" x="-321" y="52"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
@@ -75,23 +75,23 @@
                     </view>
                     <connections>
                         <outlet property="videoPreview" destination="mis-F3-f11" id="L4B-c1-EhK"/>
-                        <segue destination="wjf-mf-kH3" kind="show" identifier="openQR" id="3TO-Vo-hxf"/>
+                        <segue destination="wjf-mf-kH3" kind="show" identifier="openQR" id="caU-Tv-iOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w94-kM-oAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424.8" y="22.906403940886701"/>
         </scene>
-        <!--Building View Controller-->
+        <!--Building-->
         <scene sceneID="ffU-rE-1Gy">
             <objects>
-                <viewController storyboardIdentifier="openQR" id="wjf-mf-kH3" customClass="BuildingViewController" customModule="queensqr_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuildingView" title="Building" id="wjf-mf-kH3" customClass="BuildingViewController" customModule="queensqr_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZnZ-Ox-H0X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ED-b9-Md5">
-                                <rect key="frame" x="147" y="264" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ED-b9-Md5">
+                                <rect key="frame" x="10" y="178" width="349" height="368"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -101,13 +101,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IUK-ex-4eY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Building" id="h3k-aw-noY"/>
                     <connections>
                         <outlet property="testLabel" destination="5ED-b9-Md5" id="DVv-mR-aWA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3H-WI-Gyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="15"/>
+            <point key="canvasLocation" x="2208.8000000000002" y="14.77832512315271"/>
         </scene>
     </scenes>
 </document>

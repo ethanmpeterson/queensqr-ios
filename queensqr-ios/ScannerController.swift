@@ -89,8 +89,9 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
                 //print(metadataObj.stringValue)
                 qrText = metadataObj.stringValue!
                 // perform segue
-                performSegue(withIdentifier: "openQR", sender: nil)
                 captureSession.stopRunning()
+                performSegue(withIdentifier: "openQR", sender: self)
+                
                 //messageLabel.text = metadataObj.stringValue
             }
         }
