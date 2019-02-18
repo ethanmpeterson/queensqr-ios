@@ -13,6 +13,7 @@ class BuildingViewController: UIViewController {
     
     var qrData : String = ""
     
+    var apiRoot = ProcessInfo.processInfo.environment["API_ROOT"]
     
     @IBOutlet weak var testLabel: UILabel!
     
@@ -20,6 +21,7 @@ class BuildingViewController: UIViewController {
         super.viewDidLoad()
         print(qrData)
         testLabel.text = qrData
+        print(apiRoot!)
         // Do any additional setup after loading the view.
     }
     
