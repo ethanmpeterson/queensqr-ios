@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         browse.layer.cornerRadius = 15
         scan.layer.cornerRadius = 15
     }
+
     
 }
 

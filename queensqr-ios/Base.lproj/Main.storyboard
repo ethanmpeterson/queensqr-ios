@@ -45,6 +45,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.95923715829849243" green="0.75339037179946899" blue="0.2702585756778717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eDw-A2-9jP" kind="show" id="Njj-Es-20V"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xO6-in-Iwj">
                                 <rect key="frame" x="0.0" y="88" width="375" height="409"/>
@@ -150,7 +153,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAW-Av-w21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2103" y="-630"/>
+            <point key="canvasLocation" x="422" y="-667"/>
         </scene>
         <!--Building-->
         <scene sceneID="9f7-sb-yRB">

@@ -10,120 +10,85 @@ import UIKit
 
 import Alamofire
 
-struct cellData {
-    var opened = Bool()
-    var title = String()
-    var sectionData = [String]()
-}
+
 
 class BuildingViewController: UITableViewController {
     
+    var rowSelected = -1
     
-    var qrData : String = ""
     var apiRoot = ProcessInfo.processInfo.environment["API_ROOT"]
     
     var URL : String = ""
-    var building : [String : Any]?
+    var buildings : [[String : Any]]!
     
-    var tableViewData = [cellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableViewData = [
-            cellData(opened: false, title: "General Information", sectionData: ["1", "2", "3"]),
-            cellData(opened: false, title: "Alias", sectionData: ["1", "2", "3"]),
-            cellData(opened: false, title: "Services", sectionData: [""]),
-        ]
-        
-        print(qrData)
+        self.navigationItem.title = "Building List"
         print(apiRoot!)
         // Do any additional setup after loading the view.
         
         // convert QR Data to JSON
-        let data = qrData.data(using: .utf8)!
-        var jsObject = [String : Any]()
-        do {
-            if let json = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [String : Any]
-            {
-                print(json) // use the json here
-                jsObject = json
-            } else {
-                print("bad json")
-            }
-        } catch let error as NSError {
-            print(error)
-        }
         
-        URL = "\(apiRoot!)/buildings/\(jsObject["id"]!)"
+        URL = "\(apiRoot!)/buildings/"
         print(URL)
-        getBuilding(URL)
+        getBuildings(URL)
     }
 
-    func getBuilding(_ url : String) {
+    func getBuildings(_ url : String) {
         AF.request(url, headers: [:]).responseJSON { response in
             if let d = response.result.value {
-                self.building = d as? [String : Any]
-                self.navigationItem.title = (self.building?["name"] as! String)
-                self.tableViewData[0].sectionData = [
-                    self.building!["address"] as! String,
-                    self.building!["faculty"] as! String,
-                    self.building!["history"] as! String,
-                ]
-                self.tableViewData[1].sectionData = self.building!["alias"] as! [String]
-                self.tableViewData[2].sectionData = [""]
-                
+                self.buildings = d as! [[String : Any]]
+                print(d)
             }
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewData.count
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableViewData[section].opened {
-            return tableViewData[section].sectionData.count + 1
-        } else {
-            return 1
-        }
+        return 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dataIndex = indexPath.row - 1
-        if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-                return UITableViewCell()
-            }
-            cell.textLabel?.text = tableViewData[indexPath.section].title
-            cell.textLabel?.textAlignment = NSTextAlignment.center
-            cell.textLabel?.adjustsFontSizeToFitWidth = true
-            cell.textLabel?.font.withSize(24.0)
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-                return UITableViewCell()
-            }
-            cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
-            cell.textLabel?.textAlignment = NSTextAlignment.left
-            //cell.layoutMargins.left = 30
-            return cell
-        }
-    }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            if tableViewData[indexPath.section].opened {
-                tableViewData[indexPath.section].opened = false
-                let sections = IndexSet.init(integer: indexPath.section)
-                tableView.reloadSections(sections, with: .none)
-            } else {
-                tableViewData[indexPath.section].opened = true
-                let sections = IndexSet.init(integer: indexPath.section)
-                tableView.reloadSections(sections, with: .none)
-            }
-        }
-    }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let dataIndex = indexPath.row - 1
+//        if indexPath.row == 0 {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+//                return UITableViewCell()
+//            }
+//            cell.textLabel?.text = tableViewData[indexPath.section].title
+//            cell.textLabel?.textAlignment = NSTextAlignment.center
+//            cell.textLabel?.adjustsFontSizeToFitWidth = true
+//            cell.textLabel?.font.withSize(24.0)
+//            return cell
+//        } else {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+//                return UITableViewCell()
+//            }
+//            cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+//            cell.textLabel?.textAlignment = NSTextAlignment.left
+//            //cell.layoutMargins.left = 30
+//            return cell
+//        }
+//    }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {
+//            if tableViewData[indexPath.section].opened {
+//                tableViewData[indexPath.section].opened = false
+//                let sections = IndexSet.init(integer: indexPath.section)
+//                tableView.reloadSections(sections, with: .none)
+//            } else {
+//                tableViewData[indexPath.section].opened = true
+//                let sections = IndexSet.init(integer: indexPath.section)
+//                tableView.reloadSections(sections, with: .none)
+//            }
+//        }
+//    }
     
     /*
     // MARK: - Navigation
