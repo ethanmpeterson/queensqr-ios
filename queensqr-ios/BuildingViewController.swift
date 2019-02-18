@@ -64,6 +64,7 @@ class BuildingViewController: UITableViewController {
         AF.request(url, headers: [:]).responseJSON { response in
             if let d = response.result.value {
                 self.building = d as? [String : Any]
+                self.navigationItem.title = (self.building?["name"] as! String)
             }
         }
     }
@@ -87,12 +88,14 @@ class BuildingViewController: UITableViewController {
                 return UITableViewCell()
             }
             cell.textLabel?.text = tableViewData[indexPath.section].title
+            
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
                 return UITableViewCell()
             }
             cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+            cell.layoutMargins.left = 30
             return cell
         }
     }
