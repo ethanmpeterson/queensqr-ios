@@ -10,9 +10,8 @@ import UIKit
 
 import Alamofire
 
-class BuildingViewController: UIViewController {
+class BuildingViewController: UITableViewController {
     
-    @IBOutlet weak var testLabel: UILabel!
     
     var qrData : String = ""
     var apiRoot = ProcessInfo.processInfo.environment["API_ROOT"]
@@ -22,8 +21,8 @@ class BuildingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         print(qrData)
-        testLabel.text = qrData
         print(apiRoot!)
         // Do any additional setup after loading the view.
         
@@ -46,19 +45,7 @@ class BuildingViewController: UIViewController {
         print(URL)
         getBuilding(URL)
     }
-    
-//    func jsonConv(_ dataIn : String) -> String {
-//        if let js = try JSONSerialization.jsonObject(with: dataIn, options : .allowFragments) as? [String : Any]
-//        {
-//            return js
-//        }
-//        return "ERROR"
-//    }
-    
-    func updateView() {
-        
-    }
-    
+
     func getBuilding(_ url : String) {
         AF.request(url, headers: [:]).responseJSON { response in
             if let d = response.result.value {
@@ -67,6 +54,9 @@ class BuildingViewController: UIViewController {
         }
     }
 
+    
+    
+    
     /*
     // MARK: - Navigation
 

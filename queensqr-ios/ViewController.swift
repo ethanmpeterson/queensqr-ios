@@ -10,9 +10,13 @@ import UIKit
 import Alamofire
 class ViewController: UIViewController {
 
+    @IBOutlet weak var browse: UIButton!
+    @IBOutlet weak var scan: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        browse.layer.cornerRadius = 15
+        scan.layer.cornerRadius = 15
     }
     
 }

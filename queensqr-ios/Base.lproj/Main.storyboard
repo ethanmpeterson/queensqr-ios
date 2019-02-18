@@ -34,27 +34,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H47-G0-Kek">
-                                <rect key="frame" x="129" y="293" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Browse Buildings"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H47-G0-Kek">
+                                <rect key="frame" x="57" y="534" width="260" height="66"/>
+                                <color key="backgroundColor" red="0.054818160831928253" green="0.16791072487831116" blue="0.36082077026367188" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="3F6-9w-dRR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Browse Buildings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.95923715829849243" green="0.75339037179946899" blue="0.2702585756778717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wZ-W2-oKw">
-                                <rect key="frame" x="142" y="337" width="91" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Scan a Code!"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xO6-in-Iwj">
+                                <rect key="frame" x="0.0" y="88" width="375" height="409"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="409" id="i8S-qy-teo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wZ-W2-oKw">
+                                <rect key="frame" x="57" y="658" width="260" height="67"/>
+                                <color key="backgroundColor" red="0.054818160831928253" green="0.16791072487831116" blue="0.36082077026367188" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Scan a Code!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="J9U-bU-HCC" kind="show" id="DJt-Ew-tLQ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66060805320739746" green="0.15953439474105835" blue="0.23131540417671204" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="5wZ-W2-oKw" firstAttribute="centerX" secondItem="xO6-in-Iwj" secondAttribute="centerX" id="0f0-mf-h61"/>
+                            <constraint firstItem="5wZ-W2-oKw" firstAttribute="trailing" secondItem="H47-G0-Kek" secondAttribute="trailing" id="2Aw-1T-tbl"/>
+                            <constraint firstItem="H47-G0-Kek" firstAttribute="top" secondItem="xO6-in-Iwj" secondAttribute="bottom" constant="37" id="KEd-H8-fQ8"/>
+                            <constraint firstItem="xO6-in-Iwj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ybr-yb-wPd"/>
+                            <constraint firstItem="xO6-in-Iwj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aRe-R1-qDL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5wZ-W2-oKw" secondAttribute="bottom" constant="53" id="asj-He-1Nu"/>
+                            <constraint firstAttribute="trailing" secondItem="xO6-in-Iwj" secondAttribute="trailing" id="f9a-r8-qll"/>
+                            <constraint firstItem="5wZ-W2-oKw" firstAttribute="top" secondItem="H47-G0-Kek" secondAttribute="bottom" constant="58" id="gfh-SD-P44"/>
+                            <constraint firstItem="H47-G0-Kek" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="ooC-XU-GR1"/>
+                            <constraint firstItem="5wZ-W2-oKw" firstAttribute="leading" secondItem="H47-G0-Kek" secondAttribute="leading" id="qIW-zg-62o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="aVX-lE-hCl"/>
+                    <connections>
+                        <outlet property="browse" destination="H47-G0-Kek" id="dr5-pv-qsa"/>
+                        <outlet property="scan" destination="5wZ-W2-oKw" id="whq-Xq-8Lq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="504.80000000000001" y="22.906403940886701"/>
         </scene>
         <!--Scanner-->
         <scene sceneID="TQh-GR-tpZ">
@@ -75,40 +108,43 @@
                     </view>
                     <connections>
                         <outlet property="videoPreview" destination="mis-F3-f11" id="L4B-c1-EhK"/>
-                        <segue destination="wjf-mf-kH3" kind="show" identifier="openQR" id="caU-Tv-iOD"/>
+                        <segue destination="eDw-A2-9jP" kind="show" identifier="openQR" id="Ief-Xu-lWm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w94-kM-oAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424.8" y="22.906403940886701"/>
         </scene>
-        <!--Building-->
-        <scene sceneID="ffU-rE-1Gy">
+        <!--Building View Controller-->
+        <scene sceneID="yxy-b5-jqh">
             <objects>
-                <viewController storyboardIdentifier="BuildingView" title="Building" id="wjf-mf-kH3" customClass="BuildingViewController" customModule="queensqr_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZnZ-Ox-H0X">
+                <tableViewController id="eDw-A2-9jP" customClass="BuildingViewController" customModule="queensqr_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="J4l-dY-46G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ED-b9-Md5">
-                                <rect key="frame" x="10" y="178" width="349" height="368"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="IUK-ex-4eY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Building" id="h3k-aw-noY"/>
-                    <connections>
-                        <outlet property="testLabel" destination="5ED-b9-Md5" id="DVv-mR-aWA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p3H-WI-Gyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u5U-uD-5XC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u5U-uD-5XC" id="PhY-HS-Pe4">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eDw-A2-9jP" id="HLZ-Ua-NlT"/>
+                            <outlet property="delegate" destination="eDw-A2-9jP" id="uWN-nw-IxE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAW-Av-w21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208.8000000000002" y="14.77832512315271"/>
+            <point key="canvasLocation" x="2329" y="-90"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="2048" height="2048"/>
+    </resources>
 </document>
