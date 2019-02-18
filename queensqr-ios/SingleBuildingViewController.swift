@@ -92,8 +92,15 @@ class SingleBuildingViewController: UIViewController {
         aliasLabel.numberOfLines = 3
         aliasLabel.text = "Alias: \(convertStrArr(buildingDict["alias"] as! [String]))"
         
-        
         // Update Hours
+        let hoursDict = buildingDict["hours"] as! [String : String]
+        monday.text = "Monday: \(hoursDict["mon"] as! String)"
+        tuesday.text = "Tuesday: \(hoursDict["tue"] as! String)"
+        wednesday.text = "Wednesday: \(hoursDict["wed"] as! String)"
+        thursday.text = "Thursday: \(hoursDict["thu"] as! String)"
+        friday.text = "Friday: \(hoursDict["fri"] as! String)"
+        saturday.text = "Saturday: \(hoursDict["sat"] as! String)"
+        sunday.text = "Sunday: \(hoursDict["sun"] as! String)"
     }
     
     func applyStyles() {
