@@ -10,6 +10,9 @@ import UIKit
 
 class ServiceViewController: UIViewController {
     
+    @IBOutlet weak var genInfo: UIView!
+    @IBOutlet weak var hoursView: UIView!
+    
     @IBOutlet weak var roomNumber: UILabel!
     @IBOutlet weak var facultyLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -27,7 +30,6 @@ class ServiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Filter Data and Update Views and Labels
         self.navigationItem.title = "\(service["name"] as! String)"
         roomNumber.text = "Room Number: \(service["room_number"] as! String)"
@@ -43,6 +45,8 @@ class ServiceViewController: UIViewController {
         friday.text = "Friday: \(hoursDict["fri"] as! String)"
         saturday.text = "Saturday: \(hoursDict["sat"] as! String)"
         sunday.text = "Sunday: \(hoursDict["sun"] as! String)"
+        genInfo.layer.cornerRadius = 15
+        hoursView.layer.cornerRadius = 15
     }
     
 

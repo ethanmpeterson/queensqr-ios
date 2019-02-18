@@ -24,6 +24,14 @@ class ViewController: UIViewController {
         browse.layer.cornerRadius = 15
         scan.layer.cornerRadius = 15
         
+        let borderColor = UIColor(red: 246/255, green: 192/255, blue: 70/255, alpha: 1).cgColor
+        
+        browse.layer.borderColor = borderColor
+        browse.layer.borderWidth = 3
+        
+        scan.layer.borderColor = borderColor
+        scan.layer.borderWidth = 3
+        
         URL = "\(apiRoot!)/buildings/"
         print(URL)
         getBuildings(URL)

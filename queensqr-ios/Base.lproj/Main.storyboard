@@ -454,6 +454,8 @@
                         <outlet property="descriptionLabel" destination="ux4-gb-P2d" id="csR-0E-SoD"/>
                         <outlet property="facultyLabel" destination="7zS-qs-ZH6" id="dbQ-Sb-LSG"/>
                         <outlet property="friday" destination="BBj-Kr-GZd" id="mdW-Pc-iaE"/>
+                        <outlet property="genInfo" destination="wzB-Gc-dK3" id="jhe-0l-voO"/>
+                        <outlet property="hoursView" destination="chA-v7-j4E" id="kFG-tQ-tg1"/>
                         <outlet property="monday" destination="vJ8-Db-Hs9" id="Lf5-Up-cBN"/>
                         <outlet property="roomNumber" destination="mv1-5R-iro" id="G7y-ds-k12"/>
                         <outlet property="saturday" destination="1Fu-ZN-8r5" id="94i-9C-9aZ"/>
